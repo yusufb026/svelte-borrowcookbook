@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	a,
+	button,
+	select {
+		@apply cursor-pointer;
+	}
+
+  article li + li {
+    @apply mt-2;
+  }
+
+  h3 {
+    @apply mb-2 mt-6 text-[1.6rem];
+  }
+
+  img {
+    @apply block h-auto max-w-full;
+  }
+
+  section + section {
+    @apply mt-6;
+  }
+
+  strong {
+    @apply font-bold;
+  }
+
+  ol,
+  ul {
+    padding-left: 18px;
+  }
+
+  p:first-child,
+  ol:first-child,
+  ul:first-child {
+    @apply mt-0;
+  }
+
+  p {
+    @apply mb-0;
+  }
+
+  h3+p,
+  p+h3,
+  p+p {
+    @apply mt-4;
+  }
+}
+
+@layer components {
+  #head a {
+    @apply block no-underline text-lg;
+  }
+
+  #head a.active {
+    @apply text-accent;
+  }
+
+  #head a:not(.active) {
+    @apply text-white;
+  }
+
+  .border-top {
+    border-top: 1px solid #bbb;
+  }
+
+  .container {
+    @apply max-w-screen-lg mx-auto px-4;
+  }
+
+  .title {
+    @apply mx-auto text-center;
+    font-size: clamp(2.2rem, 3.2rem, 8vw)
+  }
+
+  .titleSub {
+    @apply mb-4 mt-0;
+    font-size: clamp(1.8rem, 2.2rem, 6vw);
+  }
+
+  .title,
+  .titleSub,
+  h3 {
+    @apply font-light font-title leading-tight max-w-screen-md mt-0 text-secondary;
+  }
+}
+
+* {
+	box-sizing: border-box
+}
+
+@font-face {
+  font-family: 'Josefin Sans';
+  src: local('Josefin Sans Light'), local('JosefinSans-Light'),
+      url('/fonts/JosefinSans-Light.woff2') format('woff2'),
+      url('/fonts/JosefinSans-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Merienda';
+  src: url('/fonts/Merienda-Bold.woff2') format('woff2'),
+      url('/fonts/Merienda-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+#captionGradient {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.87), rgba(15, 23, 42, 0.2) 100px, rgba(15, 23, 42, 0.6));
+}
+
+@media screen and (min-width: 800px) {
+  main {
+    padding-top: 58px;
+  }
+
+  #head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #head a {
+    padding: 10px 15px;
+  }
+
+  #head li {
+    display: inline-block;
+  }
+
+  #hero {
+    height: 500px;
+  }
+
+  #menu {
+    margin-right: 1.5rem;
+  }
+
+  #menuToggler {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  main {
+    padding-top: 59px;
+  }
+
+  #head a {
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding: 10px 1.5rem;
+  }
+
+  #head li {
+    display: block;
+  }
+
+  #hero {
+    height: calc(100vh - 58px);
+  }
+
+  #menu:not(.open) {
+    display: none;
+  }
+}

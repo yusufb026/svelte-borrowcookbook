@@ -1,0 +1,4 @@
+*.log
+build
+.svelte-kit
+yarn.lock
